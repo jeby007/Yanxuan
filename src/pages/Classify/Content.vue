@@ -4,15 +4,15 @@
       <div class="contentContainer">
         <div class="banner">
           <a href="javascript:;">
-            <img :src="leftList.bannerUrl">
+            <img :src="cateList.bannerUrl">
           </a>
         </div>
         <div class="cateList">
           <ul class="list">
-            <li>
+            <li v-for="(subCate) in cateList.subCateList">
               <a href="javascript:;">
-                <img src="http://yanxuan.nosdn.127.net/cee41a60a2d4d06426f863aea2395f19.png?imageView&quality=85&thumbnail=144x144">
-                <p>每日特惠好货</p>
+                <img v-lazy="subCate.bannerUrl">
+                <p>{{subCate.name}}</p>
               </a>
             </li>
           </ul>
@@ -23,32 +23,40 @@
 </template>
 
 <script>
+  import Bscroll from 'better-scroll'
   export default {
     props:{
-      leftList:Array,
+      currentCateList:Object,
     },
-    computed:{
-      findCateList(){
-        const cateList=this.leftList
-        const id =this.$route.params.id
-
+    data(){
+      return {
+        cateList:''
       }
-    }
+    },
+    updated(){
+      if (this.currentCateList) {
+        this.cateList=this.currentCateList
+      }
+      new Bscroll('.content',{
+        click:true
+      })
+    },
   }
 </script>
 
-<style lang="stylus" rel="stylesheet/stylus">
+<style lang="stylus" rel="stylesheet/stylus" scoped>
   .content
     margin-left: 2.16rem;
-    padding: .4rem .4rem .28rem;
-    height: 100%;
+    padding: 0 .4rem .28rem;
+    height: 15rem;
     overflow: hidden;
     .contentWarp
+      padding-top .4rem
       .contentContainer
         .banner
           position: relative;
           width: 100%;
-          height: 2.56rem;
+          height: 100%;
           display: table;
           margin-bottom: .42667rem;
           background: center no-repeat #f4f4f4;
@@ -56,11 +64,15 @@
           border-radius: 4px;
           img
             display block
+            width 100%
         .cateList
           .list
+            display flex
+            flex-wrap wrap
+            align-items center
             li
-              display: inline-block;
-              margin-right: .45333rem;
+              display: flex
+              margin-right: .4rem;
               font-size: 0;
               width: 1.92rem;
               vertical-align: top;
@@ -68,6 +80,8 @@
                 img
                   display block
                   background: #fff
+                  width 100%
+                  height auto
                 p
                   height: .96rem;
                   font-size: .32rem;

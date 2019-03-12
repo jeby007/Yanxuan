@@ -14,12 +14,12 @@
           <ul class="leftNavList">
             <li class="leftItem" v-for="(item,index) in leftList" :key="index">
               <router-link :to="`/classify/${item.id}`">
-                <span>{{item.name}}</span>
+                <span class="active">{{item.name}}</span>
               </router-link>
             </li>
           </ul>
         </div>
-        <router-view :leftList="leftList">
+        <router-view :currentCateList="currentCateList">
           <Content />
         </router-view>
       </div>
@@ -45,11 +45,21 @@
         scrollY:true
       })
     },
+
+    computed:{
+      currentCateList(){
+        if (this.leftList.length>0){
+          const cateList=this.leftList
+          const id =this.$route.params.id
+          return cateList.find(item=>item.id===+id)
+        }
+      },
+    },
     components:{Content}
   }
 </script>
 
-<style lang="stylus" rel="stylesheet/stylus">
+<style lang="stylus" rel="stylesheet/stylus" scoped>
   .classifyWrap
     .searchWrap
       border-bottom .02rem solid #ededed
@@ -106,7 +116,7 @@
                 &:before
                   content: ' ';
                   position: absolute;
-                  top: 0;
+                  top: .5rem;
                   left: 0;
                   bottom: 0;
                   width: .08rem;
