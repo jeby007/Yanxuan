@@ -14,7 +14,7 @@
           <ul class="leftNavList">
             <li class="leftItem" v-for="(item,index) in leftList" :key="index">
               <router-link :to="`/classify/${item.id}`">
-                <span class="active">{{item.name}}</span>
+                <span>{{item.name}}</span>
               </router-link>
             </li>
           </ul>
