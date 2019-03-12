@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import App from './App'
 import VueLazyload from 'vue-lazyload'
+
 import router from './router'
 import './mock/mockServer'
 import store from './store'

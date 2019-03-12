@@ -55,11 +55,12 @@
     },
     computed:{
       currentCateList(){
-        if (this.leftList.length>0){
-          const cateList=this.leftList
-          const id =this.$route.params.id
-          return cateList.find(item=>item.id===+id)
-        }
+        const cateList=this.leftList
+        const id =this.$route.params.id
+        return cateList.find(item=>item.id===+id)
+
+        // if (this.leftList.length>0){
+        // }
       },
     },
 

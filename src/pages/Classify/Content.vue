@@ -11,7 +11,7 @@
           <ul class="list">
             <li v-for="(subCate) in cateList.subCateList">
               <a href="javascript:;">
-                <img v-lazy="subCate.bannerUrl">
+                <img v-lazy="subCate.wapBannerUrl">
                 <p>{{subCate.name}}</p>
               </a>
             </li>
@@ -30,7 +30,8 @@
     },
     data(){
       return {
-        cateList:''
+        cateList:'',
+        contentList:''
       }
     },
     updated(){

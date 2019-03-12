@@ -6,13 +6,13 @@
       </span>
       <span>首页</span>
     </span>
-    <a href="javascript:;" class="guide_item" :class="{on:$route.path==='/classify'||$route.params.id}" @click="goTo('/classify')">
+    <a href="javascript:;" class="guide_item" :class="{on:$route.path.split('/')[1]==='classify'}" @click="goTo('/classify')">
       <span class="item_icon">
         <i class="iconfont icon-chouti"></i>
       </span>
       <span>分类</span>
     </a>
-    <a href="javascript:;" class="guide_item" :class="{on: $route.path==='/discern'}" @click="goTo('/discern')">
+    <a href="javascript:;" class="guide_item" :class="{on:$route.path.split('/')[1]==='discern'}" @click="goTo('/discern')">
       <span class="item_icon">
         <i class="iconfont icon-tuxiangshibie"></i>
       </span>

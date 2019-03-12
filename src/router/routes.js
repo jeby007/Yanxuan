@@ -8,6 +8,7 @@ import Profile from '../pages/Profile/Profile'
 
 import LoginPhone from '../pages/Profile/LoginPhone'
 import Content from '../pages/Classify/Content'
+import CurrentCate from '../pages/Discern/currentCate'
 
 export default [
   {
@@ -37,9 +38,19 @@ export default [
   {
     path: '/discern',
     component: Discern,
+    redirect:'/discern/0',
     meta: {
       showFooterNav: true
-    }
+    },
+    children: [
+      {
+        path:'/discern/:id',
+        component:CurrentCate,
+        meta:{
+          showFooterNav:true
+        },
+      }
+    ]
   },
   {
     path: '/cart',
