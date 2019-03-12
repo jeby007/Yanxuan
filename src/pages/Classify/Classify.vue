@@ -12,9 +12,9 @@
       <div class="contentList">
         <div class="leftScrollNav">
           <ul class="leftNavList">
-            <li class="leftItem" v-for="(item,index) in leftList" :key="index">
+            <li class="leftItem" v-for="(item,index) in leftList" :key="index" @click="num(index)">
               <router-link :to="`/classify/${item.id}`">
-                <span>{{item.name}}</span>
+                <span :class="{active:index===newNum}">{{item.name}}</span>
               </router-link>
             </li>
           </ul>
@@ -35,6 +35,7 @@
     data(){
       return{
         leftList:[],
+        newNum:''
       }
     },
     async mounted () {
@@ -44,8 +45,14 @@
         click:true,
         scrollY:true
       })
+      //初始化默认显示第一个为高亮
+      this.newNum=0
     },
-
+    methods:{
+      num(index){
+        this.newNum=index
+      }
+    },
     computed:{
       currentCateList(){
         if (this.leftList.length>0){
@@ -55,6 +62,7 @@
         }
       },
     },
+
     components:{Content}
   }
 </script>

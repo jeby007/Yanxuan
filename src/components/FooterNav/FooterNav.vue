@@ -6,7 +6,7 @@
       </span>
       <span>首页</span>
     </span>
-    <a href="javascript:;" class="guide_item" :class="{on:$route.path==='/classify'||$route.path==='/classify/1022001'}" @click="goTo('/classify')">
+    <a href="javascript:;" class="guide_item" :class="{on:$route.path==='/classify'||$route.params.id}" @click="goTo('/classify')">
       <span class="item_icon">
         <i class="iconfont icon-chouti"></i>
       </span>

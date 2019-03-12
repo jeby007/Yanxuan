@@ -1,7 +1,9 @@
 <template>
   <div>
     <div class="wrap">
-      <LoginHeader/>
+      <LoginHeader>
+        <div class="logo" slot="middleTitle"></div>
+      </LoginHeader>
       <div class="other">
         <div class="bigLogo">
           <img src="//yanxuan.nosdn.127.net/bd139d2c42205f749cd4ab78fa3d6c60.png">
@@ -44,7 +46,7 @@
 <style lang="stylus" rel="stylesheet/stylus" scoped>
   .wrap
     position: fixed;
-    top: 88px;
+    top: 0;
     bottom: 0;
     width: 100%;
     background-color: #f2f5f4;

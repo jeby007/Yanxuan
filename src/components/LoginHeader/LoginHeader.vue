@@ -4,7 +4,7 @@
       <div class="goHome" @click="$router.replace('/')">
         <span class="iconfont icon-shouye"></span>
       </div>
-      <div class="logo"></div>
+      <slot name="middleTitle"></slot>
       <div class="searchAndCart">
         <div class="cart" @click="$router.replace('/cart')">
           <span class="iconfont icon-gouwuche"></span>
