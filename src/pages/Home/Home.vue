@@ -1025,11 +1025,11 @@
       window.addEventListener('scroll',this.handleScroll)
     },
     methods:{
-      handleScroll() {
-        let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
-        let offsetTop = document.querySelector('#classifyNav').offsetTop
-        scrollTop > offsetTop?this.showTop = true:this.showTop = false
-      },
+      // handleScroll() {
+      //   let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+      //   let offsetTop = document.querySelector('#classifyNav').offsetTop
+      //   scrollTop > offsetTop?this.showTop = true:this.showTop = false
+      // },
       showTabList(){
         this.showTab=!this.showTab
       }
