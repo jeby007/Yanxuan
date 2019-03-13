@@ -18,7 +18,7 @@
         </ul>
       </div>
     </div>
-    <router-view :tabContent="tabContent">
+    <router-view>
       <CurrentCate/>
     </router-view>
   </div>
@@ -42,7 +42,7 @@
     },
     computed:{
       ...mapState(['tabNav']),
-      ...mapState(['tabContent'])
+      ...mapState(['tabContent']),
     },
     components:{
       Hearder,
@@ -72,13 +72,18 @@
     .tabNav
       background: #fafafa;
       border-bottom: 0.01rem solid #d9d9d9;
+      border-top 0.015rem solid #d9d9d9
+      margin-top: -.059rem;
       height .9rem
       font-size .36rem
       color #7F7F7F
       width 100%
+      position fixed
+      z-index 5
       .tabNavWrap
         height 100%
         width 100%
+        overflow hidden
         .tabNavList
           display: -webkit-box;
           height 100%

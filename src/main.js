@@ -10,7 +10,7 @@ Vue.use(VueLazyload,{
   preLoad: 1.3,
   error: '../static/images/lazy-err.gif',
   loading: '../static/images/lazy.gif',
-  attempt: 1
+  attempt: 2
 })
 new Vue({
   el: '#app',

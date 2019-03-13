@@ -7,15 +7,10 @@
 
 <script>
   import FooterNav from './components/FooterNav/FooterNav'
-  //import {reqHomeData} from './api'
   export default {
     components:{
       FooterNav
     },
-    // async mounted () {
-    //   const result = await reqHomeData()
-    //   console.log(result)
-    // }
   }
 </script>
 

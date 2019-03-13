@@ -4,14 +4,14 @@
       <div class="contentContainer">
         <div class="banner">
           <a href="javascript:;">
-            <img :src="cateList.bannerUrl">
+            <img v-lazy="cateList.bannerUrl" :key="cateList.bannerUrl">
           </a>
         </div>
         <div class="cateList">
           <ul class="list">
             <li v-for="(subCate) in cateList.subCateList">
               <a href="javascript:;">
-                <img v-lazy="subCate.wapBannerUrl">
+                <img v-lazy="subCate.wapBannerUrl" :key="subCate.wapBannerUrl">
                 <p>{{subCate.name}}</p>
               </a>
             </li>
@@ -57,7 +57,7 @@
         .banner
           position: relative;
           width: 100%;
-          height: 100%;
+          height: 2.56rem;
           display: table;
           margin-bottom: .42667rem;
           background: center no-repeat #f4f4f4;
@@ -66,6 +66,7 @@
           img
             display block
             width 100%
+            height 2.56rem
         .cateList
           .list
             display flex

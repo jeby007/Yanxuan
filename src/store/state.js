@@ -2,5 +2,6 @@
 
 export default {
   tabNav:[],
-  tabContent:[]
+  tabContent:[],
+  autoData:[]
 }
